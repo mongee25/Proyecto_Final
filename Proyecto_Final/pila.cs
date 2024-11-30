@@ -41,7 +41,6 @@ namespace Proyecto_Final
         }
         public void PrintStack()
         {
-            //imprime la pila
             if (Empty())
             {
                 Console.WriteLine("La pila está vacía, inserte un valor");
@@ -57,8 +56,6 @@ namespace Proyecto_Final
         }
         public bool Push(int num)
         {
-            //regresa true si la insercion es exitosa
-            //regresa false si la pila esta llena y no se inserto
             if (Full())
             {
                 Console.WriteLine("FALSE: Pila LLENA");
@@ -74,8 +71,6 @@ namespace Proyecto_Final
         }
         public int Pop()
         {
-            //regresa el numero sacado de la pila
-            //si la pila esta vacia regresa -1
             if (Empty())
             {
                 Console.WriteLine("La pila está vacía, inserte un valor");

@@ -31,7 +31,7 @@ namespace Proyecto_Final
 
                         do
                         {
-                            Console.WriteLine("-----Menu Lista-----");
+                            Console.WriteLine("-----MENÚ LISTAS-----");
                             Console.WriteLine("------------------------");
                             Console.WriteLine("1.- Insertar nodo.\n2.- Imprimir tamaño.\n3.- Buscar nodo.\n4.- Borrar nodo.\n5.- Modificar nodo.\n6.- Buscar valor.\n7.- Imprimir lista.\n8.- Regresar.");
                             Console.WriteLine("------------------------");
@@ -102,7 +102,7 @@ namespace Proyecto_Final
                                     break;
 
                                 case 8:
-                                    Console.WriteLine("Chao...");
+                                    Console.WriteLine("Saliendo al menú principal...");
                                     break;
 
                                 default:
@@ -111,6 +111,7 @@ namespace Proyecto_Final
                             }
                         }
                         while (modeL != 8);
+
                         Console.WriteLine();
                         break;
                     //------------------------------------------------------------------
@@ -121,7 +122,7 @@ namespace Proyecto_Final
 
                         do
                         {
-                            Console.WriteLine("-------Proyecto Pilas-------");
+                            Console.WriteLine("-------MENÚ PILAS-------");
                             Console.WriteLine("1.-Establecer tamaño\n2.- Push\n3.- Pop\n4.- Imprimir\n5.- Regresar");
                             Console.Write("Seleccionar opción => ");
                             modeP = Convert.ToInt32(Console.ReadLine());
@@ -174,7 +175,7 @@ namespace Proyecto_Final
                                     break;
 
                                 case 5:
-                                    Console.WriteLine("Chao...");
+                                    Console.WriteLine("Saliendo al menú principal...");
                                     break;
 
                                 default:
@@ -182,6 +183,7 @@ namespace Proyecto_Final
                                     break;
                             }
                         } while (modeP != 5);
+
                         Console.WriteLine();
                         break;
                     //------------------------------------------------------------------
@@ -192,7 +194,7 @@ namespace Proyecto_Final
 
                         do
                         {
-                            Console.WriteLine("----------MENU Colas----------");
+                            Console.WriteLine("----------MENÚ COLAS----------");
                             Console.WriteLine("1.- Establecer Tamaño\n2.- Count\n3.- Insert\n4.- Extract\n5.- Imprimir\n6.- Regresar");
                             Console.WriteLine("------------------------------");
                             Console.Write("Seleccionar opción => ");
@@ -267,7 +269,7 @@ namespace Proyecto_Final
                                     break;
 
                                 case 6:
-                                    Console.WriteLine("Chao...");
+                                    Console.WriteLine("Saliendo al menú principal...");
                                     break;
 
                                 default:
@@ -285,7 +287,7 @@ namespace Proyecto_Final
 
                         do
                         {
-                            Console.WriteLine("-------Proyecto Árboles-------");
+                            Console.WriteLine("-------MENÚ ÁRBOLES-------");
                             Console.WriteLine("1.- Insertar nodo\n2.- Tamaño\n3.- Altura\n4.- LRP\n5. Recorrido\n6.- Regresar");
                             Console.Write("Seleccionar opción => ");
                             modeA = Convert.ToInt32(Console.ReadLine());
@@ -310,9 +312,16 @@ namespace Proyecto_Final
                                     break;
 
                                 case 6:
+                                    Console.WriteLine("Saliendo al menú principal...");
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Opción no válida, intenta nuevamente.");
                                     break;
                             }
                         }while(modeA != 6);
+
+                        Console.WriteLine();
                         break;
                     //------------------------------------------------------------------
                     //SALIR

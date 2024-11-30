@@ -54,9 +54,6 @@ namespace Proyecto_Final
 
         public int Find(int pos)
         {
-            //Regresa valor de la posiscion indicada
-            //si no encuentra la posicion o la lista esta vacia
-            //regresa -1
             if (inicio == null || pos < 0)
             {
                 return -1;
@@ -65,7 +62,6 @@ namespace Proyecto_Final
             int indice = 0;
             nodo act = inicio;
 
-            //Sirve para encontrar el valor de la posisición indicada
             while (act != null)
             {
                 if (indice == pos)
@@ -80,8 +76,6 @@ namespace Proyecto_Final
 
         public int Count()
         {
-            //regresa la cantidad de nodos de la lista
-            //si la lista esta vacia regresa 0
             if (inicio == null)
             {
                 return 0;
@@ -100,9 +94,6 @@ namespace Proyecto_Final
 
         public int FindValue(int num)
         {
-            //regresa la posicion que tiene el valor indicado
-            //si no encuentra la posicion o la lista esta vacia
-            //regresa -1
             if (inicio == null)
             {
                 return -1;
@@ -125,10 +116,6 @@ namespace Proyecto_Final
 
         public bool Change(int pos, int num)
         {
-            //asigna el nuevo valor en la posicion indicada
-            //si el cambio es exitoso regresa true
-            //si no encuentra el nodo o la lista esta vacia
-            //regresa false
             if (inicio == null)
                 return false;
 
@@ -152,16 +139,11 @@ namespace Proyecto_Final
 
         public bool Delete(int pos)
         {
-            //elimina el nodo en la posiion indicada y
-            // regresa true si elimino exitosamente
-            //si no encuentra la posicion o la lista
-            //esta vacia regresa falso, ya que no pudo eliminar
             if (inicio == null)
             {
                 return false;
             }
 
-            // Eliminar el primer nodo ya que no tiene referencias
             if (pos == 0)
             {
                 inicio = inicio.Sig;
@@ -171,7 +153,6 @@ namespace Proyecto_Final
             nodo act = inicio;
             int indice = 0;
 
-            // Buscar el nodo anterior al que queremos eliminar
             while (act.Sig != null)
             {
                 if (indice == pos - 1)

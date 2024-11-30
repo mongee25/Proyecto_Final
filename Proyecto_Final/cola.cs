@@ -58,6 +58,12 @@ namespace Proyecto_Final
         }
         public int Count()
         {
+            if (inicio == null)
+            {
+                Console.WriteLine("Introduzca un tamaño de cola primero");
+                Console.WriteLine("");
+            }
+
             nodo act = inicio;
             count = 0;
 
@@ -71,8 +77,6 @@ namespace Proyecto_Final
         }
         public bool Insert(int num)
         {
-            //regresa true al insertar exitosamente
-            //regresa false si la cola esta llena y no se puedo insertar
             if (Overflow())
             {
                 Console.WriteLine("FALSE: cola en estado Overflow");
@@ -100,8 +104,6 @@ namespace Proyecto_Final
         }
         public int Extract()
         {
-            //regresa el valor extraido de la cola
-            //si la cola esta vacia regresa -1 porque no pudo extraer
             if (Underflow())
             {
                 Console.WriteLine("FALSE: cola en estado Underflow");
