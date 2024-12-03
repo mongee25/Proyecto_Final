@@ -109,59 +109,50 @@ namespace Proyecto_Final
             return 1 + Math.Max(izquierda, derecha);
         }
 
-        // Recorrido en Postorden (LRP)
-        /*public void RecorridoLRP(nodoA q)
-        {
-            if (q != null)
-            {
-                RecorridoLRP(q.izq);
-                RecorridoLRP(q.der);
-                Console.Write($"{q.valor},");
-            }
-        }*/
         
         public void RecorridoLRP()
         {
-            Queue<nodoA> Cola = new Queue<nodoA>();
-            Cola.Enqueue(raiz);
+            Queue<nodoA> modeCola = new Queue<nodoA>();
+            modeCola.Enqueue(raiz);
 
-            int sumaRecorridos = 0;
-            double countRecorridos = 0;
+            int sumRecorrido = 0;
+            double contRecorrido = 0;
 
-            while (Cola.Count > 0)
+            while (modeCola.Count > 0)
             {
-                nodoA nodoActual = Cola.Dequeue();
-                nodoA temp = raiz;
-                string recorrido = $"{temp.valor}";
+                nodoA nodoActual = modeCola.Dequeue();
+                nodoA sol = raiz;
+                string recorrido = $"{sol.valor}";
 
-                while (temp != nodoActual)
+                while (sol != nodoActual)
                 {
-                    if (nodoActual.valor < temp.valor)
+                    if (nodoActual.valor < sol.valor)
                     {
-                        temp = temp.izq;
-                        recorrido = recorrido + $",{temp.valor}";
+                        sol = sol.izq;
+                        recorrido = recorrido + $",{sol.valor}";
                     }
                     else
                     {
-                        temp = temp.der;
-                        recorrido = recorrido + $",{temp.valor}";
+                        sol = sol.der;
+                        recorrido = recorrido + $",{sol.valor}";
                     }
                 }
 
-                int cantidadNodos = recorrido.Split(',').Length;
-                Console.WriteLine($"{recorrido} = {cantidadNodos}");
+                int cantNodos = recorrido.Split(',').Length;
+                Console.WriteLine($"{recorrido} = {cantNodos}");
 
-                sumaRecorridos += cantidadNodos;
-                countRecorridos++;
+               sumRecorrido = sumRecorrido + cantNodos;
+                
 
-                if (nodoActual.izq != null) Cola.Enqueue(nodoActual.izq);
-                if (nodoActual.der != null) Cola.Enqueue(nodoActual.der);
+                if (nodoActual.izq != null) modeCola.Enqueue(nodoActual.izq);
+                if (nodoActual.der != null) modeCola.Enqueue(nodoActual.der);
             }
 
-            double promedio = sumaRecorridos / countRecorridos;
-            Console.WriteLine($"\nSuma total de recorridos: {sumaRecorridos}");
-            Console.WriteLine($"Cantidad de nodos: {countRecorridos}");
-            Console.WriteLine($"LRP {sumaRecorridos}/{countRecorridos} = {promedio:F3}");
+            double promedio = sumRecorrido / contRecorrido;
+            Console.WriteLine();
+            Console.WriteLine($"Suma total de los recorridos: {sumRecorrido}");
+            Console.WriteLine($"Cantidad de nodos: {contRecorrido}");
+            Console.WriteLine($"LRP: {sumRecorrido}/{contRecorrido} = {promedio:F3}");
         }
     }
 }
