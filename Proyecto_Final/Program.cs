@@ -283,6 +283,7 @@ namespace Proyecto_Final
                     //------------------------------------------------------------------
                     //ÁRBOLES
                     case 4:
+                        arbol miArbolito = new arbol();
                         int modeA;
 
                         do
@@ -297,18 +298,32 @@ namespace Proyecto_Final
                             switch (modeA)
                             {
                                 case 1:
+                                    Console.Write("Ingrese el valor del nodo a insertar: ");
+                                    int valor = Convert.ToInt32(Console.ReadLine());
+                                    miArbolito.Insertar(valor);
+                                    Console.WriteLine("Nodo insertado correctamente.\n");
                                     break;
 
                                 case 2:
+                                    int tamaño = miArbolito.Tamaño(miArbolito.raiz);
+                                    Console.WriteLine($"El tamaño del árbol es: {tamaño}\n");
                                     break;
 
                                 case 3:
+                                    int altura = miArbolito.Altura(miArbolito.raiz);
+                                    Console.WriteLine($"La altura del árbol es: {altura}\n");
                                     break;
 
                                 case 4:
+                                    Console.WriteLine("LRP");
+                                    miArbolito.RecorridoLRP();
+                                    Console.WriteLine("\n");
                                     break;
 
                                 case 5:
+                                    Console.WriteLine("Recorrido Inorden:");
+                                    miArbolito.Recorrido(miArbolito.raiz);
+                                    Console.WriteLine("\n");
                                     break;
 
                                 case 6:
